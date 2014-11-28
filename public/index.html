@@ -217,7 +217,7 @@
         <section>
           <section>
             <h3>backbone.js</h3>
-            <iframe src="backbone.html"></iframe>
+            <iframe src="backbone-simple.html"></iframe>
           </section>
           <section>
             <h3>HTML</h3>
@@ -237,11 +237,7 @@ $(document).ready(function() {
       dollars: 0
     },
     hryvnias: function(value) {
-      if (typeof value == 'undefined') {
-        return d2h(this.get('dollars'))
-      }
-      value = parseFloat(value);
-      this.set('dollars', h2d(value));
+      return this.get('dollars') * kurs;
     }
   })
 
@@ -250,7 +246,6 @@ $(document).ready(function() {
     model: new Currency(),
     events: {
       'input #backboneDollar': 'updateDollars',
-      'input #backboneHryvnia': 'updateHryvnias'
     },
     initialize: function() {
       this.listenTo(this.model, 'change:dollars', this.render)
@@ -263,9 +258,6 @@ $(document).ready(function() {
     updateDollars: function(event) {
       this.model.set('dollars', event.target.value)
     },
-    updateHryvnias: function(event) {
-      this.model.hryvnias(event.target.value)
-    }
   })
 
   var converterView = new ConverterView();
@@ -276,47 +268,22 @@ $(document).ready(function() {
         <section>
           <section>
             <h3>angular.js</h3>
-            <iframe src="angular.html"></iframe>
+            <iframe src="angular-simple.html"></iframe>
           </section>
           <section>
             <h3>HTML</h3>
             <pre><code data-trim>
-<div ng-app="currency-converter">
+<div ng-app ng-init="kurs = 14.96">
   <input type="number" ng-model="dollars">
-  <input type="number" ng-model="dollars" converter="d2h">
+  <input type="number" value="{{dollars * kurs}}">
 </div>
-            </code></pre>
-          </section>
-          <section>
-            <h3>JS</h3>
-            <pre><code data-trim>
-angular.module('currency-converter', [])
-
-.directive('converter', function(converters) {
-  return {
-    require: 'ngModel',
-    link: function($scope, $element, attr, ngModel) {
-      var converter = converters[attr.converter];
-      ngModel.$formatters.unshift(converter.formatter);
-      ngModel.$parsers.push(converter.parser);
-      $scope.dollars = 0;
-    }
-  }
-})
-
-.value('converters', {
-  d2h: {
-    formatter: d2h,
-    parser: h2d
-  }
-});
             </code></pre>
           </section>
         </section>
         <section>
           <section>
             <h3>ember.js</h3>
-            <iframe src="ember.html"></iframe>
+            <iframe src="ember-simple.html"></iframe>
           </section>
           <section>
             <h3>HTML</h3>
@@ -343,10 +310,7 @@ App = Ember.Application.create({
 App.ApplicationController = Ember.Controller.extend({
   dollars: 0,
   hryvnias: function (key, value) {
-    if (arguments.length > 1) {
-      this.set('dollars', h2d(value));
-    }
-    return d2h(this.get('dollars'));
+    return this.get('dollars') * kurs;
   }.property('dollars')
 });
             </code></pre>

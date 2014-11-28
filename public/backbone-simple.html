@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css" />
+
+    <link rel="stylesheet" href="css/example.css" />
+
+    <script src="lib/js/jquery-2.1.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+
+    <script src="lib/js/underscore.min.js"></script>
+    <script src="lib/js/backbone.min.js"></script>
+
+    <script src="js/converter.js"></script>
+
+    <script src="js/backbone-app-simple.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="panel panel-default col-md-6" id="backbone">
+          <div class="panel-heading">backbone.js</div>
+          <div class="panel-body">
+            <form role="form">
+              <div class="form-group col-md-6">
+                <label for="backboneDollar">$</label>
+                <input type="number" class="form-control" id="backboneDollar">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="backboneHryvnia">₴</label>
+                <input type="number" class="form-control" id="backboneHryvnia" readonly>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
