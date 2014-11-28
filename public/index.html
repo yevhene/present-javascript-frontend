@@ -6,8 +6,8 @@
     <meta name="author" content="Yevhene Shemet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="lib/css/reveal.min.css">
+    <link rel="stylesheet" href="lib/css/theme/beige.css" id="theme">
 
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -49,6 +49,10 @@
       .icon.reversed {
         transform: scale(-1, 1);
       }
+
+      iframe {
+        height: 289px;
+      }
     </style>
 
     <!--[if lt IE 9]>
@@ -58,7 +62,7 @@
     <script src="lib/js/jquery-2.1.1.min.js"></script>
 
     <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.min.js"></script>
+    <script src="lib/js/reveal.min.js"></script>
 
     <script>
       $(document).ready(function() {
@@ -99,17 +103,20 @@
           <p>
             <small>Створено <a href="mailto:yevhene@gmail.com">Євгеном Шеметом</a> / <a href="http://twitter.com/yevhene">@yevhene</a></small>
           </p>
+          <p>
+            <small>Github: <a href="http://gitgub.com/yevhene/presentation">yevhene/presentation</a></small>
+          </p>
         </section>
         <section>
           <p>Про що ми будемо говорити:</p>
-          <h2 class="fragment roll-in">Rich Web Application Frameworks</h2>
+          <h2>Rich Web Application Frameworks</h2>
         </section>
         <section>
           <p>Навіщо вони потрібні:</p>
-          <h2 class="fragment roll-in">Боротьба зі складністю</h2>
+          <h2>Боротьба зі складністю</h2>
         </section>
         <section>
-          <p>Розробка программного забезпечення</p>
+          <p>Розробка програмного забезпечення</p>
           <p>це боротьба двох вовків</p>
           <p><b class="fragment roll-in">стабільністю</b> <span class="fragment roll-in">і <b>функціоналом</b>.</span></p>
           <p class="fragment roll-in">Який перемагає?</p>
@@ -119,6 +126,9 @@
         <section>
           <section>
             <h2>Про що ми не будемо говорити:</h2>
+            <aside class="notes">
+              Вниз не затупи крутити.
+            </aside>
           </section>
           <section>
             <h3>Full-stack frameworks:</h3>
@@ -141,7 +151,7 @@
               <li>...легіон їм ймення...</li>
             </ul>
             <aside class="notes">
-              Тому що їх дуже багато. Зараз це дуже можно, бо веб приносить великі гроші і розробники активно шукають шляхи, як зробити веб застосунки потужнішими.
+              Тому що їх дуже багато. Зараз це дуже моно, бо веб приносить великі гроші і розробники активно шукають шляхи, як зробити веб застосунки потужнішими.
             </aside>
           </section>
         </section>
@@ -156,58 +166,205 @@
         <section>
           <h3>backbone.js</h3>
           <ul class="custom-bullet">
-            <li class="fragment roll-in"><span class="bullet">+</span>Структурує код;</li>
-            <li class="fragment roll-in"><span class="bullet">+</span>Тривалий час популярний;</li>
-            <li class="fragment roll-in"><span class="bullet">+</span>Мінімалістичний;</li>
-            <li class="fragment roll-in"><span class="bullet">+</span>Свобода рішень;</li>
+            <li><span class="bullet">+</span>Структурує код;</li>
+            <li><span class="bullet">+</span>Тривалий час популярний;</li>
+            <li><span class="bullet">+</span>Мінімалістичний;</li>
+            <li><span class="bullet">+</span>Свобода рішень;</li>
             <li class="fragment roll-in"><span class="bullet">-</span>Свобода рішень.</li>
           </ul>
           <aside class="notes">
             Легковісний фреймворк, створений в 2010-у році. Став швидко популярний у противагу монстрам типу ExtJS, які тоді домінували на ринку. Вікористовується нині такими ресурсами, як Pinterest та AirBNB.
+
+            <b>Структурує код</b> - історія про iMallTool.
           </aside>
         </section>
         <section>
           <h3>angular.js</h3>
           <ul class="custom-bullet">
-            <li class="fragment roll-in"><span class="bullet">+</span>Швидке прототипування;</li>
-            <li class="fragment roll-in"><span class="bullet">+</span>Велика увага тестуванню;</li>
-            <li class="fragment roll-in"><span class="bullet">+</span>Easy to learn, difficult to master;</li>
-            <li class="fragment roll-in"><span class="bullet">+</span>Привильне місце для HTML. У представленні;</li>
-            <li class="fragment roll-in"><span class="bullet">-</span>Швидкість/Марнотратність;</li>
-            <li class="fragment roll-in"><span class="bullet">-</span>Весь у собі;</li>
-            <li class="fragment roll-in"><span class="bullet">-</span>"Стихійний" дизайн.</li>
+            <li><span class="bullet">+</span>Швидке прототипування;</li>
+            <li><span class="bullet">+</span>Велика увага тестуванню;</li>
+            <li><span class="bullet">+</span>Easy to learn, difficult to master;</li>
+            <li><span class="bullet">+</span>Привильне місце для HTML. У представленні;</li>
+            <div class="fragment roll-in">
+              <li><span class="bullet">-</span>Швидкість/Марнотратність;</li>
+              <li><span class="bullet">-</span>Весь у собі;</li>
+              <li><span class="bullet">-</span>"Стихійний" дизайн.</li>
+            </div>
           </ul>
           <aside class="notes">
-            Створенний у 2009-у році. Розробники, для прикладу переписали застосунок зо скаладвся з 17 тисяч строк коду, та був написаний за 6 місяців. Переписали за три тижні і вклалися в тісячу строк. Чим привернули неабияку увагу спільноти і в першу чергу Google, яка і взяла framework під своє крило. Активно використовується в Google та Virgin.
+            Створенний у 2009-у році. Розробники, для прикладу переписали застосунок зо скаладвся з 17 тисяч строк коду, та був написаний за 6 місяців. Переписали за три тижні і вклалися в тисячу строк. Чим привернули неабияку увагу спільноти і в першу чергу Google, яка і взяла framework під своє крило. Активно використовується в Google та Virgin.
+
+            <b>Швидкість/Марнотратність</b> - повільні наглядачі (watches).
           </aside>
         </section>
         <section>
           <h3>ember.js</h3>
           <ul class="custom-bullet">
-            <li class="fragment roll-in"><span class="bullet">+</span>Вирішує частину проблем Angular-y;</li>
+            <li><span class="bullet">+</span>Вирішує частину проблем Angular-y;</li>
             <li class="fragment roll-in"><span class="bullet">-</span>Створює ще більше проблем;</li>
             <li class="fragment roll-in"><span class="bullet">+</span>Чіткі залежності;</li>
-            <li class="fragment roll-in"><span class="bullet">-</span>Багато  коду у тому числі голого boilerplate коду;</li>
+            <li class="fragment roll-in"><span class="bullet">-</span>Багато  коду, для базового функціоналу сторінки;</li>
             <li class="fragment roll-in"><span class="bullet">+</span>Набір конвенцій;</li>
             <li class="fragment roll-in"><span class="bullet">-</span>Сильно переписувався декілька разів. Високий порог входження.</li>
           </ul>
           <aside class="notes">
-            З 2007-го року розроблявся різними людьми та компаніми, в тому числі і Apple. Потім був форкунутий core contributor-ом таких проектів, як Rails и jQuery - Yehuda Katz. Вікористовуєтья в Yahoo! і Groupon.
+            З 2007-го року розроблявся різними людьми та компаніями, в тому числі і Apple. Потім був форкунутий core contributor-ом таких проектів, як Rails и jQuery - Yehuda Katz. Використовуєтья в Yahoo! і Groupon.
           </aside>
+        </section>
+        <section>
+          <h1>Приклади</h1>
+        </section>
+        <section>
+          <section>
+            <h3>backbone.js</h3>
+            <iframe src="backbone.html"></iframe>
+          </section>
+          <section>
+            <h3>HTML</h3>
+            <pre><code data-trim>
+<div id="backbone">
+  <input type="number" id="backboneDollar">
+  <input type="number" id="backboneHryvnia">
+</div>
+            </code></pre>
+          </section>
+          <section>
+            <h3>JS</h3>
+            <pre><code data-trim>
+$(document).ready(function() {
+  var Currency = Backbone.Model.extend({
+    defaults: {
+      dollars: 0
+    },
+    hryvnias: function(value) {
+      if (typeof value == 'undefined') {
+        return d2h(this.get('dollars'))
+      }
+      value = parseFloat(value);
+      this.set('dollars', h2d(value));
+    }
+  })
+
+  var ConverterView = Backbone.View.extend({
+    el: document.getElementById('backbone'),
+    model: new Currency(),
+    events: {
+      'input #backboneDollar': 'updateDollars',
+      'input #backboneHryvnia': 'updateHryvnias'
+    },
+    initialize: function() {
+      this.listenTo(this.model, 'change:dollars', this.render)
+      this.render()
+    },
+    render: function() {
+      this.$('#backboneDollar').val(this.model.get('dollars'))
+      this.$('#backboneHryvnia').val(this.model.hryvnias())
+    },
+    updateDollars: function(event) {
+      this.model.set('dollars', event.target.value)
+    },
+    updateHryvnias: function(event) {
+      this.model.hryvnias(event.target.value)
+    }
+  })
+
+  var converterView = new ConverterView();
+});
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>angular.js</h3>
+            <iframe src="angular.html"></iframe>
+          </section>
+          <section>
+            <h3>HTML</h3>
+            <pre><code data-trim>
+<div ng-app="currency-converter">
+  <input type="number" ng-model="dollars">
+  <input type="number" ng-model="dollars" converter="d2h">
+</div>
+            </code></pre>
+          </section>
+          <section>
+            <h3>JS</h3>
+            <pre><code data-trim>
+angular.module('currency-converter', [])
+
+.directive('converter', function(converters) {
+  return {
+    require: 'ngModel',
+    link: function($scope, $element, attr, ngModel) {
+      var converter = converters[attr.converter];
+      ngModel.$formatters.unshift(converter.formatter);
+      ngModel.$parsers.push(converter.parser);
+      $scope.dollars = 0;
+    }
+  }
+})
+
+.value('converters', {
+  d2h: {
+    formatter: d2h,
+    parser: h2d
+  }
+});
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>ember.js</h3>
+            <iframe src="ember.html"></iframe>
+          </section>
+          <section>
+            <h3>HTML</h3>
+            <pre><code data-trim>
+<div id="ember"></div>
+            </code></pre>
+          </section>
+          <section>
+            <h3>Template</h3>
+            <pre><code data-trim>
+<script type="text/x-handlebars">
+  {{input type="number" value=dollars}}
+  {{input type="number" value=hryvnias}}
+</script>
+            </code></pre>
+          </section>
+          <section>
+            <h3>JS</h3>
+            <pre><code data-trim>
+App = Ember.Application.create({
+  rootElement: '#ember'
+});
+
+App.ApplicationController = Ember.Controller.extend({
+  dollars: 0,
+  hryvnias: function (key, value) {
+    if (arguments.length > 1) {
+      this.set('dollars', h2d(value));
+    }
+    return d2h(this.get('dollars'));
+  }.property('dollars')
+});
+            </code></pre>
+          </section>
         </section>
         <section>
           <h3>Ідея повного розділення frontend та backend.</h3>
           <p>Всі клієнти рівноцінні. І мобильні і веб.</p>
           <ul class="custom-bullet">
-            <li class="fragment roll-in"><span class="bullet">-</span>Складній або неможливий рендерінг HTML на стороні backend.</li>
-            <li class="fragment roll-in"><span class="bullet">-</span>Single Page Application парадігма ломає існуючий уклад вебу.</li>
-            <li class="fragment roll-in"><span class="bullet">-</span>Складність вікористання, як рядових компонентів сторінки.</li>
+            <li><span class="bullet">-</span>Складний або неможливий рендерінг HTML на стороні backend.</li>
+            <li><span class="bullet">-</span>Single Page Application парадигма ломає існуючий уклад вебу.</li>
+            <li><span class="bullet">-</span>Складність використання, як рядових компонентів сторінки.</li>
           </ul>
           <div class="fragment roll-in">
             <hr />
             <p>У цій сфері ще буде етап встановлення стандартів, а на даний момент ми маємо багато невирішенних проблем.</p>
           </div>
-          <p class="fragment roll-in">Насправді ні.</p>
+          <p class="fragment roll-in">Насправді не зовсім.</p>
         </section>
         <section>
           <section>
@@ -216,26 +373,34 @@
               <span>react.js</span>
               <img src="img/left-wing.svg" class="icon reversed">
             </h1>
+            <aside class="notes">
+              Знову вниз.
+            </aside>
           </section>
           <section>
             <h3>react.js</h3>
             <ul class="custom-bullet">
               <li><span class="bullet">+</span>Дуже швидкий;</li>
-              <li class="fragment roll-in"><span class="bullet">+</span>Рендерінг з серверної сторони;</li>
-              <li class="fragment roll-in"><span class="bullet">+</span>Той самій код на сервері і на клієнті.</li>
+              <li><span class="bullet">+</span>Рендерінг з серверної сторони;</li>
+              <li><span class="bullet">+</span>Той самий код на сервері і на клієнті.</li>
             </ul>
+            <aside class="notes">
+              <b>Дуже швидкий</b> - історія про tForm.
+            </aside>
           </section>
           <section>
             <h3>react.js - інструмент</h3>
             <ul>
-              <li class="fragment roll-in">Представляє тільки V із MVC;</li>
-              <li class="fragment roll-in">Можна комбінувати з чим завгодно;</li>
-              <li class="fragment roll-in">Добре доповнює існуючі технології.</li>
+              <li>Представляє тільки V із MVC;</li>
+              <li>Можна комбінувати з чим завгодно;</li>
+              <li>Добре доповнює існуючі технології.</li>
             </ul>
+          </aside>
+
           </section>
           <section>
             <h3>Але все ж...</h3>
-            <p class="fragment roll-in">...він не такий кльовий, як ангулар.<p>
+            <p class="fragment roll-in">...він не такий кльовий, як Angular.js.</p>
           </section>
         </section>
         <section>
