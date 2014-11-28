@@ -101,7 +101,7 @@
           <h1>JavaScript Frameworks</h1>
           <h3>Обзор</h3>
           <p>
-            <small>Создано <a href="mailto:yevhene@gmail.com">Евгеном Шеметом</a> / <a href="http://twitter.com/yevhene">@yevhene</a></small>
+            <small>Автор <a href="mailto:yevhene@gmail.com">Евгений Шемет</a> / <a href="http://twitter.com/yevhene">@yevhene</a></small>
           </p>
           <p>
             <small>Github: <a href="http://gitgub.com/yevhene/presentation">yevhene/presentation</a></small>
@@ -114,6 +114,9 @@
         <section>
           <p>Зачем они нужны:</p>
           <h2>Борьба со сложностью</h2>
+          <aside class="notes">
+            Когда программист перестает бороться с компилятором, он становится на путь борьбы со сложностью.
+          </aside>
         </section>
         <section>
           <p>Разработка программного обеспечения</p>
@@ -137,7 +140,7 @@
               <li>derby.js</li>
             </ul>
             <aside class="notes">
-              Потому что они питаются вкорне изменить структуру взаимодействия.
+              Потому что они пытаются в корне изменить структуру взаимодействия.
             </aside>
           </section>
           <section>
@@ -162,6 +165,15 @@
             <li>Модный angular.js <span class="fragment roll-in">(2009)</span></li>
             <li>Молодой ember.js <span class="fragment roll-in">(2007)</span></li>
           </ul>
+          <aside class="notes">
+            На самом деле исторически все не совсем так.
+
+            <p><b>backbone.js</b> - легковесный фреймворк, созданный в 2010-м году который стал очень быстро популярен в противовес монстрам типа ExtJS. Он активно применяется такими игроками как Pinterest и AirBNB.</p>
+
+            <p><b>angular.js</b> - Создан в 2009 (кризис), создатели переписали приложение из 17к строк кода которое писали пол-года до 1к за 3 недели чем сильно привлекли Google. Которая и взяла фреймворк под свое крыло. Актовно используется в Google и Virgin.</p>
+
+            <p><b>ember.js</b> - С 2007-го года писался разными людьми и компаниями, побывала там даже Apple. В конце кноцов был фокркнут core contributor-ом таких проектов как Rails и jQuery Yehuda Katz. Используется Yahoo!, Groupon.</p>
+          </aside>
         </section>
         <section>
           <h3>backbone.js</h3>
@@ -171,11 +183,12 @@
             <li><span class="bullet">+</span>Минималистичный;</li>
             <li><span class="bullet">+</span>Свобода решений;</li>
             <li class="fragment roll-in"><span class="bullet">-</span>Свобода решений.</li>
+            <li class="fragment roll-in"><span class="bullet">-</span>Много кода.</li>
           </ul>
           <aside class="notes">
-            backbone.js - легковесный фреймворк, созданный в 2010-м году который стал очень быстро популярен в противовес монстрам типа ExtJS. Он активно применяется такими игроками как Pinterest и AirBNB.
+            <p><b>Структурирует код</b> - история про iMallTool.</p>
 
-            <b>Структурирует код</b> - история про iMallTool.
+            <p><b>Свобода решений</b> - все нужно делать самому.</p>
           </aside>
         </section>
         <section>
@@ -192,9 +205,9 @@
             </div>
           </ul>
           <aside class="notes">
-            Создан в 2009, создатели переписали приложение из 17к строк кода которое писали пол-года до 1к за 3 недели чем сильно привлекли Google. Которая и взяла фреймворк под свое крыло. Актовно используется в Google и Virgin.
+            <p><b>Скорость/Расточительность</b> - медленный watcher.</p>
 
-            <b>Скорость/Расточительность</b> - медленный watcher.
+            <p><b>“Стихийный” дизайн</b> - difficult to master начинается слишком рано.</p>
           </aside>
         </section>
         <section>
@@ -207,9 +220,6 @@
             <li class="fragment roll-in"><span class="bullet">+</span>Набор конвенций;</li>
             <li class="fragment roll-in"><span class="bullet">-</span>Сильно переписывали несколько раз. Высокий порог вхождения.</li>
           </ul>
-          <aside class="notes">
-            С 2007-го года писался разными людьми и компаниями, побывала там даже Apple. В конце кноцов был фокркнут core contributor-ом таких проектов как Rails и jQuery Yehuda Katz. Используется Yahoo!, Groupon.
-          </aside>
         </section>
         <section>
           <h1>Примеры</h1>
@@ -263,6 +273,9 @@ $(document).ready(function() {
   var converterView = new ConverterView();
 });
             </code></pre>
+            <aside class="notes">
+              <p>Много кода.</p>
+            </aside>
           </section>
         </section>
         <section>
@@ -281,6 +294,9 @@ $(document).ready(function() {
           </section>
           <section>
             <h3>JS</h3>
+            <aside class="notes">
+              <p>Не нужен для этого примера.</p>
+            </aside>
           </section>
         </section>
         <section>
@@ -302,6 +318,9 @@ $(document).ready(function() {
   {{input type="number" value=hryvnias}}
 </script>
             </code></pre>
+            <aside class="notes">
+              <p>Очень странный какой-то.</p>
+            </aside>
           </section>
           <section>
             <h3>JS</h3>
@@ -321,17 +340,20 @@ App.ApplicationController = Ember.Controller.extend({
         </section>
         <section>
           <h3>Идея полного разделения frontend и backend.</h3>
-          <p>Все клиенты равноценны. И мобильные и веб.</p>
-          <ul class="custom-bullet">
-            <li><span class="bullet">-</span>Сложный или невозможный рендеринг HTML на стороне backend.</li>
-            <li><span class="bullet">-</span>Single Page Application парадигма ломает существующий уклад Веба.</li>
-            <li><span class="bullet">-</span>Сложность использования в качестве рядовых компонентов страницы.</li>
-          </ul>
           <div class="fragment roll-in">
-            <hr />
+            <ul class="custom-bullet">
+              <li><span class="bullet">-</span>Сложный или невозможный рендеринг HTML на стороне backend;</li>
+              <li><span class="bullet">-</span>Single Page Application парадигма ломает существующий уклад Веба;</li>
+              <li><span class="bullet">-</span>Сложность использования в качестве рядовых компонентов страницы.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div>
             <p>Этой сфере еще предстоит этап становления стандартов. На данный момент есть слишком много вопросов без ответов.</p>
           </div>
-          <p class="fragment roll-in">На самом деле не совсем.</p>
+          <p class="fragment roll-in">На самом деле не совсем...</p>
+        </section>
         </section>
         <section>
           <section>
@@ -341,7 +363,7 @@ App.ApplicationController = Ember.Controller.extend({
               <img src="img/left-wing.svg" class="icon reversed">
             </h1>
             <aside class="notes">
-              Опять вниз.
+              Аллилуйя! Крути вниз.
             </aside>
           </section>
           <section>
