@@ -1,7 +1,7 @@
 {
-  "name": "presentation",
+  "name": "present-javascript-frontend-frameworks",
   "version": "2.5.0",
-  "description": "Presentation JS Frameworks",
+  "description": "Presentation JavaScript Front-end Frameworks",
   "scripts": {
     "start": "nodejs app"
   },
