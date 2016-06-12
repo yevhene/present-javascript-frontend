@@ -1,5 +1,5 @@
 {
-  "name": "present-javascript-frontend-frameworks",
+  "name": "present-javascript-frontend",
   "version": "2.5.0",
   "description": "Presentation JavaScript Front-end Frameworks",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/yevhene/presentation.git"
+    "url": "git://github.com/yevhene/present-javascript-frontend.git"
   },
   "engines": {
     "node": "~0.8.0"
